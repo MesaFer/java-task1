@@ -11,4 +11,4 @@ if %errorlevel% neq 0 (
 
 echo Running...
 echo =======================================================
-java -cp out main
+java -cp out Main

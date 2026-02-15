@@ -1,5 +1,6 @@
 import java.time.LocalDateTime;
 import java.util.Objects;
+import java.util.Random;
 
 public class BankAccount {
     private static final String MESSAGE_BLOCK = "Аккаунт заблокирован.";
@@ -13,7 +14,7 @@ public class BankAccount {
     public BankAccount(String owner) {
         this.owner = owner;
         this.balance = 0;
-        this.accountNumber = (int) (Math.random() * 100000000); // 8 цифр: 00000000–99999999
+        this.accountNumber = new Random().nextInt(100000000);
         this.createdAt = LocalDateTime.now();
         this.isBlocked = false;
     }
