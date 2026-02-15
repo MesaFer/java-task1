@@ -77,7 +77,7 @@ public class BankAccount {
     }
 
     public boolean transfer(BankAccount otherAccount, int amount) {
-        if (!isBlocked && balance >= amount && amount > 0) {
+        if (!isBlocked && !otherAccount.isBlocked && balance >= amount && amount > 0) {
             balance -= amount;
             otherAccount.balance += amount;
             return true;
